@@ -22,6 +22,6 @@ def dep_install(self):
     data = json.loads(response.text)
     for item in data['items']:
         key = item['status']['podIP']
-        url = 'https://'+key+':8088/api/v1/dep_install'
+        url = 'http://'+key+':8088/api/v1/dep_install'
         resp = requests.post(url=url, data=json.dumps({'pkg': self}))
         print(resp)
