@@ -1,3 +1,3 @@
-import lib
+import hlib
 
-lib.dep_install("numpy")
+hlib.dep_install("numpy")
