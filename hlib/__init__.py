@@ -13,7 +13,7 @@ def dep_install(self):
     # get information of cluster and pods based on labels
     header = {'Authorization': 'Bearer '+token}
     url = 'https://kubernetes/api/v1/namespaces/default/pods?labelSelector=app%3Dspark-exec'
-    response = requests.get(url, headers=header, params='--insecure')
+    response = requests.get(url, headers=header, verify='false')
     # extract podIP from json file
     data = json.loads(response.text)
     for item in data['items']:
